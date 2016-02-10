@@ -23,10 +23,6 @@
  */
 package com.flowpowered.networking.protocol.keyed;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-
 import com.flowpowered.networking.Codec;
 import com.flowpowered.networking.Codec.CodecRegistration;
 import com.flowpowered.networking.Message;
@@ -34,8 +30,12 @@ import com.flowpowered.networking.MessageHandler;
 import com.flowpowered.networking.protocol.AbstractProtocol;
 import com.flowpowered.networking.service.CodecLookupService;
 import com.flowpowered.networking.service.HandlerLookupService;
-
 import org.slf4j.Logger;
+
+import java.lang.reflect.InvocationTargetException;
+import java.text.MessageFormat;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * A {@code AbstractProtocol} stores {@link Message}s and their respective {@link Codec}s and {@link MessageHandler}s by key.
@@ -104,7 +104,7 @@ public abstract class KeyedProtocol extends AbstractProtocol {
             }
             return bind;
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
-            getLogger().error("Error registering codec " + codec + ": ", e);  // TODO: Use parametrized message instead of string concatation.
+            getLogger().error(MessageFormat.format("Error registering codec {0}: ", codec), e);
             return null;
         }
     }

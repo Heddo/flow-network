@@ -23,8 +23,6 @@
  */
 package com.flowpowered.networking.protocol.simple;
 
-import java.lang.reflect.InvocationTargetException;
-
 import com.flowpowered.networking.Codec;
 import com.flowpowered.networking.Codec.CodecRegistration;
 import com.flowpowered.networking.Message;
@@ -32,8 +30,10 @@ import com.flowpowered.networking.MessageHandler;
 import com.flowpowered.networking.protocol.AbstractProtocol;
 import com.flowpowered.networking.service.CodecLookupService;
 import com.flowpowered.networking.service.HandlerLookupService;
-
 import org.slf4j.Logger;
+
+import java.lang.reflect.InvocationTargetException;
+import java.text.MessageFormat;
 
 /**
  * A {@code AbstractProtocol} stores {@link Message}s and their respective {@link Codec}s and {@link MessageHandler}s.
@@ -99,7 +99,7 @@ public abstract class SimpleProtocol extends AbstractProtocol {
             }
             return bind;
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
-            getLogger().error("Error registering codec " + codec + ": ", e);  // TODO: Use parametrized message instead of string concatation.
+            getLogger().error(MessageFormat.format("Error registering codec {0}: ", codec), e);
             return null;
         }
     }
