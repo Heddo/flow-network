@@ -71,7 +71,7 @@ public class MessageHandler extends SimpleChannelInboundHandler<Message> {
     }
 
     @Override
-    protected void messageReceived(ChannelHandlerContext ctx, Message i) {
+    protected void channelRead0(ChannelHandlerContext ctx, Message i) {
         session.get().messageReceived(i);
     }
 
