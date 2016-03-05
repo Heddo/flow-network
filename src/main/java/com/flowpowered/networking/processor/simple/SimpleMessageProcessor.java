@@ -28,7 +28,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 
 /**
- * Bridge class for passing ByteBufs through byte array read/write processing. This is only only one {@link DividedMessageProcessorPart} and must use a {@link DividedMessageProcessor}
+ * Bridge class for passing ByteBufs through byte array read/write processing.
  */
 public abstract class SimpleMessageProcessor implements MessageProcessor {
     protected final int capacity;

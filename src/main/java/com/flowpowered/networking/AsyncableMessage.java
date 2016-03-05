@@ -27,6 +27,8 @@ public interface AsyncableMessage extends Message {
     /**
      * This method may optionally be used to define if the message should be handled asynchronously or synchronously, when the option is available.
      * It is completely up to the implementation how this is used.
+     *
+     * @return Returns if this method should be handled asynchronously
      */
     public boolean isAsync();
 }

@@ -23,13 +23,12 @@
  */
 package com.flowpowered.networking.protocol;
 
-import java.io.IOException;
-
+import com.flowpowered.networking.Message;
+import com.flowpowered.networking.MessageHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.flowpowered.networking.Message;
-import com.flowpowered.networking.MessageHandler;
+import java.io.IOException;
 
 /**
  * A {@code AbstractProtocol} stores to what port the protocol should be bound to.
@@ -43,9 +42,8 @@ public abstract class AbstractProtocol implements Protocol {
     }
 
     /**
-     * @param name
-     * @param maxPackets
-     * @param logger
+     * @param name The name of the protocol
+     * @param logger The logger to log output to
      */
     public AbstractProtocol(String name, Logger logger) {
         this.name = name;
@@ -75,7 +73,9 @@ public abstract class AbstractProtocol implements Protocol {
      * Allows applying a wrapper to messages with dynamically allocated id's, in case this protocol needs to provide special treatment for them.
      *
      * @param dynamicMessage The message with a dynamically-allocated codec
+     * @param <T> The type of the message
      * @return The new message
+     * @throws IOException if the message cannot be wrapped
      */
     public <T extends Message> Message getWrappedMessage(T dynamicMessage) throws IOException {
         return dynamicMessage;

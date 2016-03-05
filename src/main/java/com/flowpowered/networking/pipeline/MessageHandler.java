@@ -23,21 +23,19 @@
  */
 package com.flowpowered.networking.pipeline;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.SimpleChannelInboundHandler;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.flowpowered.networking.ConnectionManager;
 import com.flowpowered.networking.Message;
 import com.flowpowered.networking.session.Session;
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.SimpleChannelInboundHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * A {@link SimpleChannelUpstreamHandler} which processes incoming network events.
+ * A {@link SimpleChannelInboundHandler} which processes incoming network events.
  */
 public class MessageHandler extends SimpleChannelInboundHandler<Message> {
     /**
@@ -48,6 +46,8 @@ public class MessageHandler extends SimpleChannelInboundHandler<Message> {
 
     /**
      * Creates a new network event handler.
+     *
+     * @param connectionManager The connection manager for this message handler.
      */
     public MessageHandler(ConnectionManager connectionManager) {
         this.connectionManager = connectionManager;

@@ -23,16 +23,16 @@
  */
 package com.flowpowered.networking.service;
 
+import com.flowpowered.networking.Codec;
+import com.flowpowered.networking.Codec.CodecRegistration;
+import com.flowpowered.networking.Message;
+import com.flowpowered.networking.exception.IllegalOpcodeException;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import com.flowpowered.networking.Codec;
-import com.flowpowered.networking.Codec.CodecRegistration;
-import com.flowpowered.networking.Message;
-import com.flowpowered.networking.exception.IllegalOpcodeException;
 
 /**
  * A class used to lookup message codecs.
@@ -54,7 +54,7 @@ public class CodecLookupService {
      
     /**
      * The {@link CodecLookupService} stores the codecs available in the protocol. Codecs can be found using either the class of the message they represent or their message's opcode.
-     * If the provided size is 0 then a map for the opcode->Codec mapping; otherwise, an array will be used.
+     * If the provided size is 0 then a map for the opcode to Codec mapping; otherwise, an array will be used.
      * 
      * @param size 0 for map, otherwise the array size
      */
@@ -85,6 +85,7 @@ public class CodecLookupService {
      * @return the registration object of the codec
      * @throws InstantiationException if the codec could not be instantiated.
      * @throws IllegalAccessException if the codec could not be instantiated due to an access violation.
+     * @throws InvocationTargetException if the codec constructor could not be invoked
      */
     @SuppressWarnings("unchecked")
     public <M extends Message, C extends Codec<? super M>> CodecRegistration bind(Class<M> messageClazz, Class<C> codecClazz, Integer opcode) throws InstantiationException, IllegalAccessException, InvocationTargetException {

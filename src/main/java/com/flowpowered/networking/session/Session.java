@@ -33,7 +33,7 @@ import org.slf4j.Logger;
 
 /**
  * Represents a connection to another engine.
- * <br/>
+ * <br>
  * Controls the state, protocol and channels of a connection to another engine.
  */
 public interface Session {
@@ -41,6 +41,7 @@ public interface Session {
      * Passes a message to a session for processing.
      *
      * @param message message to be processed
+     * @param <T> The type of the message
      */
     <T extends Message> void messageReceived(T message);
 
@@ -57,6 +58,7 @@ public interface Session {
      * Sends a message across the network.
      *
      * @param message The message.
+     * @throws ChannelClosedException if the channel is closed while sending
      */
     void send(Message message) throws ChannelClosedException;
 
@@ -64,6 +66,7 @@ public interface Session {
      * Sends any amount of messages to the client.
      *
      * @param messages the messages to send to the client
+     * @throws ChannelClosedException if the channel is closed while sending
      */
     void sendAll(Message... messages) throws ChannelClosedException;
 
@@ -88,7 +91,7 @@ public interface Session {
     /**
      * Called when a throwable is thrown in the pipeline during inbound operations.
      *
-     * @param throwable 
+     * @param throwable The throwable that was thrown
      */
     void onInboundThrowable(Throwable throwable);
 

@@ -23,16 +23,15 @@
  */
 package com.flowpowered.networking.session;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
 import com.flowpowered.networking.AsyncableMessage;
-import io.netty.channel.Channel;
-
 import com.flowpowered.networking.Message;
 import com.flowpowered.networking.exception.ChannelClosedException;
 import com.flowpowered.networking.protocol.AbstractProtocol;
+import io.netty.channel.Channel;
+
+import java.util.ArrayDeque;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Represents a {@link BasicSession} which has both a {@link State} and {@link SendType}. It can queue messages if needed.
@@ -55,6 +54,7 @@ public class PulsingSession extends BasicSession {
      * Creates a new pulsing session.
      *
      * @param channel The channel associated with this session.
+     * @param bootstrapProtocol The protocol to use for this session.
      */
     public PulsingSession(Channel channel, AbstractProtocol bootstrapProtocol) {
         super(channel, bootstrapProtocol);

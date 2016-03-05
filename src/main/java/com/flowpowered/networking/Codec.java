@@ -26,6 +26,7 @@ package com.flowpowered.networking;
 import io.netty.buffer.ByteBuf;
 
 import java.io.IOException;
+import java.nio.ByteBuffer;
 
 /**
  * {@code Codec}s are used to encode and decode a {@link Message} into a {@link ByteBuf}.
@@ -45,6 +46,7 @@ public interface Codec<T extends Message> {
      *
      * @param buf the buffer to encode into. Should be empty.
      * @param message The message to encode
+     * @return the ByteBuf encoded into
      * @throws IOException If any data on the message fails to encode
      */
     ByteBuf encode(ByteBuf buf, T message) throws IOException;

@@ -35,7 +35,9 @@ public class UnknownPacketException extends Exception {
     private final int length;
 
     /**
+     * @param message the message of this exception
      * @param opcode the opcode of the unknown packet
+     * @param length the length of the packet, -1 if unknown
      */
     public UnknownPacketException(String message, int opcode, int length) {
         super(message);

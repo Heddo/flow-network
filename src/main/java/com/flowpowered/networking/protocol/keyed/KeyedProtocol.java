@@ -46,8 +46,8 @@ public abstract class KeyedProtocol extends AbstractProtocol {
     private final ConcurrentMap<String, HandlerLookupService> handlerLookup;
 
     /**
-     * @param name
-     * @param maxPackets {@see CodecLookupService}
+     * @param name The name of this protocol
+     * @param maxPackets See {@link CodecLookupService}
      */
     public KeyedProtocol(String name, int maxPackets) {
         super(name);
@@ -57,9 +57,9 @@ public abstract class KeyedProtocol extends AbstractProtocol {
     }
 
     /**
-     * @param name
-     * @param maxPackets {@see CodecLookupService}
-     * @param logger
+     * @param name The name of this protocol
+     * @param maxPackets See {@link CodecLookupService}
+     * @param logger The logger to use for output
      */
     public KeyedProtocol(String name, int maxPackets, Logger logger) {
         super(name, logger);

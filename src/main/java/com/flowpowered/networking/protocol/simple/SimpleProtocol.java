@@ -43,8 +43,8 @@ public abstract class SimpleProtocol extends AbstractProtocol {
     private final HandlerLookupService handlerLookup;
 
     /**
-     * @param name
-     * @param maxPackets {@see CodecLookupService}
+     * @param name The name of this protocol
+     * @param maxPackets See {@link CodecLookupService}
      */
     public SimpleProtocol(String name, int maxPackets) {
         super(name);
@@ -53,9 +53,9 @@ public abstract class SimpleProtocol extends AbstractProtocol {
     }
 
     /**
-     * @param name
-     * @param maxPackets {@see CodecLookupService}
-     * @param logger
+     * @param name The name of this protcol
+     * @param maxPackets See {@link CodecLookupService}
+     * @param logger The logger to use for output
      */
     public SimpleProtocol(String name, int maxPackets, Logger logger) {
         super(name, logger);

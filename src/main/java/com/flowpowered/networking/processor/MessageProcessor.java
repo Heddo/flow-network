@@ -27,7 +27,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 
 /**
- * {@code MessageProcessor} can be used in a {@link PreprocessReplayingDecoder} or {@link ProcessingEncoder} to define
+ * {@code MessageProcessor} can be used in a {@link com.flowpowered.networking.pipeline.MessageDecoder} or {@link com.flowpowered.networking.pipeline.MessageEncoder} to define
  * how a {@code ByteBuf} should be processed prior to decode or after encode.
  */
 public interface MessageProcessor {

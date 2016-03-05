@@ -40,6 +40,7 @@ public class ProtocolRegistry<T extends Protocol> {
     /**
      * Registers a Protocol under its name
      *
+     * @param port The port of the socket for the protocol
      * @param protocol the Protocol
      */
     public void registerProtocol(int port, T protocol) {
