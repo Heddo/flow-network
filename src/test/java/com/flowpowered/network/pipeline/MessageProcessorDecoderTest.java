@@ -59,7 +59,7 @@ public class MessageProcessorDecoderTest {
         FakeChannelHandlerContext fake = ChannelHandlerContextFaker.setup();
         AtomicReference<ByteBuf> ref = new AtomicReference<>();
         fake.setReference(ref);
-        LinkedList<byte[]> outputList = new LinkedList<byte[]>();
+        LinkedList<byte[]> outputList = new LinkedList<>();
 
         Random r = new Random();
 
@@ -90,7 +90,6 @@ public class MessageProcessorDecoderTest {
 
             // Write info to a new ByteBuf
             final ByteBuf buf = Unpooled.buffer(burstSize);
-            buf.retain();
             buf.writeBytes(input, i, burstSize);
             i += burstSize;
 
@@ -99,7 +98,7 @@ public class MessageProcessorDecoderTest {
 
             final ByteBuf returned = ref.get();
 
-            while (returned != null && true) {
+            while (returned != null) {
                 int packetSize = r.nextInt(128) + 1;
                 if (r.nextInt(10) == 0) {
                     packetSize *= 20;

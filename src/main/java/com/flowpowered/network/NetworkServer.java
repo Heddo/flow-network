@@ -55,14 +55,11 @@ public abstract class NetworkServer implements ConnectionManager {
     }
 
     public ChannelFuture bind(final SocketAddress address) {
-        return bootstrap.bind(address).addListener(new GenericFutureListener<Future<? super Void>>() {
-            @Override
-            public void operationComplete(Future<? super Void> f) throws Exception {
-                if (f.isSuccess()) {
-                    onBindSuccess(address);
-                } else {
-                    onBindFailure(address, f.cause());
-                }
+        return bootstrap.bind(address).addListener(f -> {
+            if (f.isSuccess()) {
+                onBindSuccess(address);
+            } else {
+                onBindFailure(address, f.cause());
             }
         });
     }

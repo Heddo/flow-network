@@ -74,7 +74,7 @@ public class BasicSession implements Session {
     @SuppressWarnings("unchecked")
     private void handleMessage(Message message) {
         Class<Message> messageClass = (Class<Message>) message.getClass();
-        MessageHandler handler = (MessageHandler) protocol.getMessageHandle(messageClass);
+        MessageHandler handler = protocol.getMessageHandle(messageClass);
         if (handler != null) {
             try {
                 handler.handle(this, message);
@@ -88,12 +88,9 @@ public class BasicSession implements Session {
         if (!channel.isActive()) {
             throw new ChannelClosedException("Trying to send a message when a session is inactive!");
         }
-        return channel.writeAndFlush(message).addListener(new GenericFutureListener<Future<? super Void>>() {
-            @Override
-            public void operationComplete(Future<? super Void> future) throws Exception {
-                if (future.cause() != null) {
-                    onOutboundThrowable(future.cause());
-                }
+        return channel.writeAndFlush(message).addListener(future -> {
+            if (future.cause() != null) {
+                onOutboundThrowable(future.cause());
             }
         });
     }

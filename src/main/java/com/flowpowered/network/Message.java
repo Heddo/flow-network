@@ -34,11 +34,11 @@ package com.flowpowered.network;
  */
 public interface Message {
     @Override
-    public String toString();
+    String toString();
 
     @Override
-    public boolean equals(Object other);
+    boolean equals(Object other);
 
     @Override
-    public int hashCode();
+    int hashCode();
 }

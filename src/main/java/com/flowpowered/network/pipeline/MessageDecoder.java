@@ -47,7 +47,7 @@ public class MessageDecoder extends ReplayingDecoder<ByteBuf> {
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf buf, List<Object> out) throws Exception {
         Protocol protocol = messageHandler.getSession().getProtocol();
-        Codec<?> codec = null;
+        Codec<?> codec;
         try {
             codec = protocol.readHeader(buf);
         } catch (UnknownPacketException e) {

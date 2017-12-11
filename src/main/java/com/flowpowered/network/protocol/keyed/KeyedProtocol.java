@@ -88,16 +88,10 @@ public abstract class KeyedProtocol extends AbstractProtocol {
 
     public <M extends Message, C extends Codec<? super M>, H extends MessageHandler<?, ? super M>> CodecRegistration registerMessage(String key, Class<M> message, Class<C> codec, Class<H> handler, Integer opcode) {
         try {
-            CodecLookupService codecLookup = this.codecLookup.get(key);
-            if (codecLookup == null) {
-                codecLookup = new CodecLookupService(maxPackets);
-                this.codecLookup.put(key, codecLookup);
-            }
-            HandlerLookupService handlerLookup = this.handlerLookup.get(key);
-            if (handlerLookup == null) {
-                handlerLookup = new HandlerLookupService();
-                this.handlerLookup.put(key, handlerLookup);
-            }
+            CodecLookupService codecLookup = this.codecLookup
+                .computeIfAbsent(key, k -> new CodecLookupService(maxPackets));
+            HandlerLookupService handlerLookup = this.handlerLookup
+                .computeIfAbsent(key, k -> new HandlerLookupService());
             CodecRegistration bind = codecLookup.bind(message, codec, opcode);
             if (bind != null && handler != null) {
                 handlerLookup.bind(message, handler);

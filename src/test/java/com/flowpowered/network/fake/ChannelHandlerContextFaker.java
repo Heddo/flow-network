@@ -30,7 +30,6 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelConfig;
 
 import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
 public class ChannelHandlerContextFaker {
@@ -48,14 +47,10 @@ public class ChannelHandlerContextFaker {
             Mockito.doReturn(channel).when(context).channel();
             Mockito.when(channel.config()).thenReturn(config);
             Mockito.when(config.getAllocator()).thenReturn(alloc);
-            Answer<ByteBuf> answer = new Answer<ByteBuf>() {
-                             @Override
-                             public ByteBuf answer(InvocationOnMock invocation) throws Throwable {
-                                 ByteBuf buffer = Unpooled.buffer();
-                                 buffer.retain();
-                                 return buffer;
-                             }
-                         };
+            Answer<ByteBuf> answer = invocation -> {
+                ByteBuf buffer = Unpooled.buffer();
+                return buffer;
+            };
             Mockito.when(alloc.buffer()).thenAnswer(answer);
             Mockito.when(alloc.buffer(Mockito.anyInt())).thenAnswer(answer);
         }

@@ -42,7 +42,7 @@ public interface MessageProcessor {
      * @param buffer the buffer to add the data to; will be dynamically-sized
      * @return the processed outbound ByteBuf
      */
-    public ByteBuf processOutbound(ChannelHandlerContext ctx, ByteBuf input, ByteBuf buffer);
+    ByteBuf processOutbound(ChannelHandlerContext ctx, ByteBuf input, ByteBuf buffer);
 
     /**
      * Adds the data contained in the given channel buffer to the processor and returns the output channel buffer. The method may be called from multiple threads.<br>
@@ -56,5 +56,5 @@ public interface MessageProcessor {
      * @param buffer the buffer to add the data to; will be dynamically-sized
      * @return the processed inbound buffer
      */
-    public ByteBuf processInbound(ChannelHandlerContext ctx, ByteBuf input, ByteBuf buffer);
+    ByteBuf processInbound(ChannelHandlerContext ctx, ByteBuf input, ByteBuf buffer);
 }

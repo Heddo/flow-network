@@ -38,5 +38,5 @@ public interface MessageHandler<S extends Session, T extends Message> {
      * @param session the session that received the message
      * @param message the message that was received
      */
-    public void handle(S session, T message);
+    void handle(S session, T message);
 }

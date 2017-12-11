@@ -30,5 +30,5 @@ public interface AsyncableMessage extends Message {
      *
      * @return Returns if this method should be handled asynchronously
      */
-    public boolean isAsync();
+    boolean isAsync();
 }

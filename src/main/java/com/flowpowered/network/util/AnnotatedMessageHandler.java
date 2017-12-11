@@ -94,6 +94,6 @@ public class AnnotatedMessageHandler {
      */
     @Target (ElementType.METHOD)
     @Retention (RetentionPolicy.RUNTIME)
-    public static @interface Handle {
+    public @interface Handle {
     }
 }

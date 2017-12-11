@@ -51,7 +51,7 @@ public interface Codec<T extends Message> {
      */
     ByteBuf encode(ByteBuf buf, T message) throws IOException;
 
-    public static class CodecRegistration {
+    class CodecRegistration {
         private final int opcode;
         private final Codec<?> codec;
 
@@ -82,9 +82,7 @@ public interface Codec<T extends Message> {
             if (getClass() != obj.getClass())
                 return false;
             final CodecRegistration other = (CodecRegistration) obj;
-            if (this.opcode != other.opcode)
-                return false;
-            return true;
+            return this.opcode == other.opcode;
         }
     }
 }

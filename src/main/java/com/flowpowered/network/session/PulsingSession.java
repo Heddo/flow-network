@@ -139,7 +139,7 @@ public class PulsingSession extends BasicSession {
     /**
      * Specifies send behavior
      */
-    public static enum SendType {
+    public enum SendType {
         /**
          * Messages sent with a SendType of OPEN_ONLY will only send if State is OPEN. Messages will not be
          * queued.
@@ -153,7 +153,7 @@ public class PulsingSession extends BasicSession {
         FORCE
     }
 
-    public static enum State {
+    public enum State {
         /**
          * In the exchange handshake state, the server is waiting for the client to send its initial handshake
          * packet.

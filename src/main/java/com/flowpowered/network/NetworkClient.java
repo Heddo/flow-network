@@ -49,14 +49,11 @@ public abstract class NetworkClient implements ConnectionManager {
     }
 
     public ChannelFuture connect(final SocketAddress address) {
-        return bootstrap.connect(address).addListener(new GenericFutureListener<Future<? super Void>>() {
-            @Override
-            public void operationComplete(Future<? super Void> f) throws Exception {
-                if (f.isSuccess()) {
-                    onConnectSuccess(address);
-                } else {
-                    onConnectFailure(address, f.cause());
-                }
+        return bootstrap.connect(address).addListener(f -> {
+            if (f.isSuccess()) {
+                onConnectSuccess(address);
+            } else {
+                onConnectFailure(address, f.cause());
             }
         });
     }

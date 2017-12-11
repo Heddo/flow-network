@@ -23,7 +23,6 @@
  */
 package com.flowpowered.network.pipeline;
 
-import java.io.IOException;
 import java.util.List;
 
 import io.netty.buffer.ByteBuf;
