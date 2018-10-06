@@ -48,7 +48,7 @@ public class MessageDecoder extends ReplayingDecoder<ByteBuf> {
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf buf, List<Object> out) throws Exception {
-    	if (context == null && messageHandler.getSession() != null) {
+        if (context == null && messageHandler.getSession() != null) {
             context = new CodecContext(messageHandler.getSession());
         }
         Protocol protocol = messageHandler.getSession().getProtocol();
