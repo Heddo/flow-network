@@ -1,19 +1,16 @@
-# Flow Network [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)][License]  [![Build Status](https://circleci.com/gh/GlowstoneMC/network)](https://travis-ci.org/flow/network) [![Coverage Status](http://img.shields.io/coveralls/flow/network/develop.svg?style=flat)](https://coveralls.io/r/flow/network)
+# Flow Network [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)][License]  [![Build Status](https://circleci.com/gh/GlowstoneMC/network.svg?style=svg)](https://circleci.com/gh/GlowstoneMC/network) 
 
-Network library for the Flow collection.
+Network library for the Flow collection, forked by Glowstone.
 
 ## Getting Started
 * [Examples and code snippets](https://github.com/flow/examples/tree/master/network)
 * [Official documentation](#documentation)
-* [IRC support chat](http://kiwiirc.com/client/irc.esper.net/flow)
-* [Issues tracker](https://github.com/flow/network/issues)
+* [Issues tracker](https://github.com/GlowstoneMC/network/issues)
 
 ## Source Code
-The latest and greatest source can be found here on [GitHub](https://github.com/flow/network). If you are using Git, use this command to clone the project:
+The latest and greatest source can be found here on [GitHub](https://github.com/GlowstoneMC/network). If you are using Git, use this command to clone the project:
 
-    git clone git://github.com/flow/network.git
-
-Or download the latest [development archive](https://github.com/flow/network/archive/develop.zip) or the latest [stable archive](https://github.com/flow/network/archive/master.zip).
+    git clone git://github.com/GlowstoneMC/network.git
 
 ## Dependencies
 We love open-source libraries! This project uses are few of them to make things easier. If you aren't using Maven or Gradle, you'll need these!
@@ -32,8 +29,6 @@ This project can be built with the _latest_ [Java Development Kit](http://oracle
 
 For Maven, the command `mvn clean package` will build the project and will put the compiled JAR in `target`, and `mvn clean install` will copy it to your local Maven repository.
 
-For Gradle, the command `gradlew` will build the project and will put the compiled JAR in `~/build/distributions`, and `gradlew install` will copy it to your local Maven repository.
-
 ## Contributing
 Are you a talented programmer looking to contribute some code? We'd love the help!
 
@@ -49,7 +44,7 @@ If you're using [Maven](https://maven.apache.org/download.html) to manage projec
     <dependency>
         <groupId>com.flowpowered</groupId>
         <artifactId>flow-network</artifactId>
-        <version>1.2.4</version>
+        <version>1.2.5</version>
     </dependency>
 
 You will also need to add the Glowstone Maven repository in your `pom.xml` file:
@@ -58,11 +53,6 @@ You will also need to add the Glowstone Maven repository in your `pom.xml` file:
         <id>glowstone-repo</id>
         <url>https://repo.glowstone.net/content/repositories/releases/</url>
     </repository>
-
-## Version Control
-We've adopted the [git flow branching model](http://nvie.com/posts/a-successful-git-branching-model/) in our projects. The creators of git flow released a [short intro video](http://vimeo.com/16018419) to explain the model.
-
-The `master` branch is production-ready and contains the latest tagged releases. Before a release is made, it is stagged in `release/x` branches before being pushed and tagged in the `master` branch. Small patches from `hotfix/x` branches are also pushed to `master`, and will always have a release version. The `develop` branch is pre-production, and is where we push `feature/x` branches for testing.
 
 ## Legal Stuff
 Flow Network is licensed under the [MIT License][License]. Basically, you can do whatever you want as long as you include the original copyright. Please see the `LICENSE.txt` file for details.
