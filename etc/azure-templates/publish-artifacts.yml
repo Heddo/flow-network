@@ -11,11 +11,11 @@ steps:
 
   inputs:
     artifactName: 'JavaDoc JAR$(artifact_suffix)'
-    pathtoPublish: 'target/glowstone-javadoc.jar'
+    pathtoPublish: 'target/flow-network-javadoc.jar'
 
 - task: PublishBuildArtifacts@1
   displayName: "Artifact: Sources JAR"
 
   inputs:
     artifactName: 'Sources JAR$(artifact_suffix)'
-    pathtoPublish: 'target/glowstone-sources.jar'
+    pathtoPublish: 'target/flow-network-sources.jar'
