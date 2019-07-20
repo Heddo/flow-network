@@ -71,6 +71,8 @@ public abstract class KeyedProtocol extends AbstractProtocol {
     /**
      * Gets the handler lookup service associated with this AbstractProtocol
      *
+     * @param key The string key that a protocol was registered with.
+     *
      * @return the handler lookup service, or null if none
      */
     protected HandlerLookupService getHandlerLookupService(String key) {
@@ -79,6 +81,8 @@ public abstract class KeyedProtocol extends AbstractProtocol {
 
     /**
      * Gets the codec lookup service associated with this AbstractProtocol
+     *
+     * @param key The string key that a protocol was registered with.
      *
      * @return the codec lookup service, or null if none
      */
