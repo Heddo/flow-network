@@ -1,0 +1,21 @@
+steps:
+- task: PublishBuildArtifacts@1
+  displayName: "Artifact: flow-network"
+
+  inputs:
+    artifactName: 'flow-network$(artifact_suffix)'
+    pathtoPublish: 'target/flow-network$(artifact_suffix).jar'
+
+- task: PublishBuildArtifacts@1
+  displayName: "Artifact: JavaDoc JAR"
+
+  inputs:
+    artifactName: 'JavaDoc JAR$(artifact_suffix)'
+    pathtoPublish: 'target/glowstone-javadoc$(artifact_suffix).jar'
+
+- task: PublishBuildArtifacts@1
+  displayName: "Artifact: Sources JAR"
+
+  inputs:
+    artifactName: 'Sources JAR$(artifact_suffix)'
+    pathtoPublish: 'target/glowstone-sources$(artifact_suffix).jar'
