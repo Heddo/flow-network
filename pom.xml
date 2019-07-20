@@ -216,6 +216,8 @@
 
     <!-- Build configuration -->
     <build>
+        <finalName>flow-network</finalName>
+
         <defaultGoal>clean install</defaultGoal>
 
         <!-- Resources to include -->
