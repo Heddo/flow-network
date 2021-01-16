@@ -1,4 +1,4 @@
-# Flow Network [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)][License]  [![Build Status](https://circleci.com/gh/GlowstoneMC/network.svg?style=svg)](https://circleci.com/gh/GlowstoneMC/network) 
+# Flow Network [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)][License]  ![Build and Deploy](https://github.com/GlowstoneMC/network/workflows/Build%20and%20Deploy/badge.svg)
 
 Network library for the Flow collection, forked by Glowstone.
 
