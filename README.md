@@ -12,22 +12,10 @@ The latest and greatest source can be found here on [GitHub](https://github.com/
 
     git clone git://github.com/GlowstoneMC/flow-network.git
 
-## Dependencies
-We love open-source libraries! This project uses are few of them to make things easier. If you aren't using Maven or Gradle, you'll need these!
-* [io.netty:netty-all](https://oss.sonatype.org/#nexus-search;gav~io.netty~netty-all~~~)
-* [org.slf4j:slf4j-api](https://oss.sonatype.org/#nexus-search;gav~org.slf4j~slf4j-api~~~)
-
-## Test Dependencies
-The following dependencies are only needed if you compiling the tests included with this project. Gotta test 'em all!
-* [junit:junit](https://oss.sonatype.org/#nexus-search;gav~junit~junit~~~)
-* [org.hamcrest:hamcrest-library](https://oss.sonatype.org/#nexus-search;gav~org.hamcrest~hamcrest-library~~~)
-* [org.powermock:powermock-api-mockito](https://oss.sonatype.org/#nexus-search;gav~org.powermock~powermock-api-mockito~~~)
-* [org.powermock:powermock-module-junit4](https://oss.sonatype.org/#nexus-search;gav~org.powermock~powermock-module-junit4~~~)
-
 ## Building from Source
-This project can be built with the _latest_ [Java Development Kit](http://oracle.com/technetwork/java/javase/downloads) and [Maven](https://maven.apache.org/) or [Gradle](https://www.gradle.org/). Maven and Gradle are used to simplify dependency management, but using either of them is optional.
+This project can be built with the _latest_ [Java Development Kit](http://oracle.com/technetwork/java/javase/downloads) and [Maven](https://maven.apache.org/).
 
-For Maven, the command `mvn clean package` will build the project and will put the compiled JAR in `target`, and `mvn clean install` will copy it to your local Maven repository.
+The command `mvn clean package` will build the project and will put the compiled JAR in `target/`, and `mvn clean install` will copy it to your local Maven repository.
 
 ## Contributing
 Are you a talented programmer looking to contribute some code? We'd love the help!
@@ -36,7 +24,7 @@ Are you a talented programmer looking to contribute some code? We'd love the hel
 * Please follow the above guidelines for your pull request(s) accepted.
 * For help setting up the project, keep reading!
 
-Don't forget to watch and star our repo to keep up-to-date with the latest Flow development!
+Don't forget to watch and star our repo to keep up-to-date with the latest Flow Network development!
 
 ## Usage
 If you're using [Maven](https://maven.apache.org/download.html) to manage project dependencies, simply include the following in your `pom.xml` file:
@@ -44,14 +32,14 @@ If you're using [Maven](https://maven.apache.org/download.html) to manage projec
     <dependency>
         <groupId>com.flowpowered</groupId>
         <artifactId>flow-network</artifactId>
-        <version>1.2.5</version>
+        <version>1.2.11-SNAPSHOT/version>
     </dependency>
 
 You will also need to add the Glowstone Maven repository in your `pom.xml` file:
 
     <repository>
         <id>glowstone-repo</id>
-        <url>https://repo.glowstone.net/content/repositories/releases/</url>
+        <url>https://repo.glowstone.net/content/repositories/snapshots/</url>
     </repository>
 
 ## Legal Stuff
@@ -59,7 +47,7 @@ Flow Network is licensed under the [MIT License][License]. Basically, you can do
 
 ## Credits
 * [Spout](https://spout.org/) and contributors - *where we all began, and for much of the re-licensed code.*
-* All the people behind [Java](http://www.oracle.com/technetwork/java/index.html), [Maven](https://maven.apache.org/), and [Gradle](https://www.gradle.org/).
+* All the people behind [Java](http://www.oracle.com/technetwork/java/index.html) and [Maven](https://maven.apache.org/).
 
 ## Contact
 Feel free to contact us on [Discord](https://discord.gg/TFJqhsC)

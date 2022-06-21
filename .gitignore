@@ -33,15 +33,10 @@ target
 *.gz
 *.iso
 *.jar
-!/gradle/wrapper/gradle-wrapper.jar
 *.rar
 *.tar
 *.war
 *.zip
-
-# Repository #
-##############
-.git
 
 # Logging #
 ###########
@@ -65,7 +60,6 @@ Thumbs.db
 .classpath
 .cproject
 .externalToolBuilders
-.gradle
 .idea
 .project
 .settings
