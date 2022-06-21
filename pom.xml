@@ -9,16 +9,7 @@
     <version>1.2.10-SNAPSHOT</version>
     <packaging>jar</packaging>
     <inceptionYear>2013</inceptionYear>
-    <url>https://flowpowered.com/network</url>
     <description>Network library for the Flow collection.</description>
-
-    <!-- Parent information -->
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>9</version>
-        <relativePath></relativePath>
-    </parent>
 
     <!-- Build properties -->
     <properties>
@@ -41,8 +32,8 @@
 
     <!-- Organization information -->
     <organization>
-        <name>Flow Powered</name>
-        <url>https://flowpowered.com</url>
+        <name>Glowstone</name>
+        <url>https://glowstone.net</url>
     </organization>
 
     <!-- Project developers -->
@@ -71,21 +62,15 @@
 
     <!-- Source code access -->
     <scm>
-        <connection>scm:git:git://github.com/flow/network.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:flow/flow-network.git</developerConnection>
-        <url>https://github.com/flow/network</url>
+        <connection>scm:git:git://github.com/GlowstoneMC/flow-network.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:GlowstoneMC/flow-network.git</developerConnection>
+        <url>https://github.com/GlowstoneMC/flow-network</url>
     </scm>
-
-    <!-- Continuous integration -->
-    <ciManagement>
-        <system>travis</system>
-        <url>https://travis-ci.org/flow/network</url>
-    </ciManagement>
 
     <!-- Issue management -->
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/flow/network/issues</url>
+        <url>https://github.com/GlowstoneMC/flow-network/issues</url>
     </issueManagement>
 
     <distributionManagement>

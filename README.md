@@ -1,16 +1,16 @@
-# Flow Network [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)][License]  ![Build and Deploy](https://github.com/GlowstoneMC/network/workflows/Build%20and%20Deploy/badge.svg)
+# Flow Network [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)][License]  ![Build and Deploy](https://github.com/GlowstoneMC/flow-network/workflows/Build%20and%20Deploy/badge.svg)
 
 Network library for the Flow collection, forked by Glowstone.
 
 ## Getting Started
 * [Examples and code snippets](https://github.com/flow/examples/tree/master/network)
 * [Official documentation](#documentation)
-* [Issues tracker](https://github.com/GlowstoneMC/network/issues)
+* [Issues tracker](https://github.com/GlowstoneMC/flow-network/issues)
 
 ## Source Code
-The latest and greatest source can be found here on [GitHub](https://github.com/GlowstoneMC/network). If you are using Git, use this command to clone the project:
+The latest and greatest source can be found here on [GitHub](https://github.com/GlowstoneMC/flow-network). If you are using Git, use this command to clone the project:
 
-    git clone git://github.com/GlowstoneMC/network.git
+    git clone git://github.com/GlowstoneMC/flow-network.git
 
 ## Dependencies
 We love open-source libraries! This project uses are few of them to make things easier. If you aren't using Maven or Gradle, you'll need these!
