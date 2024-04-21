@@ -6,10 +6,10 @@
     <name>Flow Network</name>
     <groupId>com.flowpowered</groupId>
     <artifactId>flow-network</artifactId>
-    <version>1.2.11-SNAPSHOT</version>
+    <version>2.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <inceptionYear>2013</inceptionYear>
-    <description>Network library for the Flow collection.</description>
+    <description>Network library for the Flow collection. Modified by Heddo. Add CodecContext back to flow-network.</description>
 
     <!-- Build properties -->
     <properties>
@@ -32,8 +32,8 @@
 
     <!-- Organization information -->
     <organization>
-        <name>Glowstone</name>
-        <url>https://glowstone.net</url>
+        <name>MiniMiners.de</name>
+        <url>https://miniminers.de</url>
     </organization>
 
     <!-- Project developers -->
@@ -58,13 +58,18 @@
             <name>Luke Spragg</name>
             <email>the@wulf.im</email>
         </developer>
+        <developer>
+            <id>heddo</id>
+            <name>Hendrik Fischer</name>
+            <email>hendrik@hendrik-fischer.de</email>
+        </developer>
     </developers>
 
     <!-- Source code access -->
     <scm>
-        <connection>scm:git:git://github.com/GlowstoneMC/flow-network.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:GlowstoneMC/flow-network.git</developerConnection>
-        <url>https://github.com/GlowstoneMC/flow-network</url>
+        <connection>scm:git:git@github.com:Heddo/flow-network.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:Heddo/flow-network.git</developerConnection>
+        <url>https://github.com/Heddo/flow-network.git</url>
     </scm>
 
     <!-- Issue management -->

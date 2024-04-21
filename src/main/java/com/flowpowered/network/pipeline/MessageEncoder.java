@@ -1,7 +1,7 @@
 /*
  * This file is part of Flow Network, licensed under the MIT License (MIT).
  *
- * Copyright (c) 2013-2022 Glowstone <https://glowstone.net/>
+ * Copyright (c) 2013-2022 MiniMiners.de <https://miniminers.de/>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,7 @@ package com.flowpowered.network.pipeline;
 
 import java.util.List;
 
+import com.flowpowered.network.CodecContext;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
@@ -39,6 +40,7 @@ import com.flowpowered.network.protocol.Protocol;
  */
 public class MessageEncoder extends MessageToMessageEncoder<Message> {
     private final MessageHandler messageHandler;
+    private CodecContext context;
 
     public MessageEncoder(final MessageHandler messageHandler) {
         this.messageHandler = messageHandler;
@@ -46,6 +48,9 @@ public class MessageEncoder extends MessageToMessageEncoder<Message> {
 
     @Override
     protected void encode(ChannelHandlerContext ctx, Message message, List<Object> out) throws Exception {
+        if (context == null && messageHandler.getSession() != null) {
+            context = new CodecContext(messageHandler.getSession());
+        }
         final Protocol protocol = messageHandler.getSession().getProtocol();
         final Class<? extends Message> clazz = message.getClass();
         CodecRegistration reg = protocol.getCodecRegistration(message.getClass());
@@ -53,7 +58,7 @@ public class MessageEncoder extends MessageToMessageEncoder<Message> {
             throw new Exception("Unknown message type: " + clazz + ".");
         }
         ByteBuf messageBuf = ctx.alloc().buffer();
-        messageBuf = reg.getCodec().encode(messageBuf, message);
+        messageBuf = reg.getCodec().encode(context, messageBuf, message);
 
         ByteBuf headerBuf = ctx.alloc().buffer();
         headerBuf = protocol.writeHeader(headerBuf, reg, messageBuf);
